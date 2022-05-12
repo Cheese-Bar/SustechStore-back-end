@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.SustechStore.mapper.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.example.SustechStore.pojo.Goods">
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId"/>
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="classification_id" jdbcType="INTEGER" property="classificationId"/>
+        <result column="address_id" jdbcType="INTEGER" property="addressId"/>
+        <result column="address_detail" jdbcType="VARCHAR" property="addressDetail"/>
+        <result column="trade_method" jdbcType="VARCHAR" property="tradeMethod"/>
+        <result column="goods_state" jdbcType="INTEGER" property="goodsState"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="address_id2" jdbcType="INTEGER" property="addressId2"/>
+        <result column="address_detail2" jdbcType="VARCHAR" property="addressDetail2"/>
+    </resultMap>
+    <resultMap id="GoodBriefResultMap" type="com.example.SustechStore.pojo.GoodBrief">
+        <id column="goods_id" jdbcType="INTEGER" property="goodId"/>
+        <result column="name" jdbcType="VARCHAR" property="goodName"/>
+        <result column="price" jdbcType="DOUBLE" property="goodPrice"/>
+        <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime"/>
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="sellerName"/>
+        <result column="credit_score" jdbcType="INTEGER" property="sellerCredit"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        goods_id, seller_id, "name", price, upload_time, description, classification_id,
+    address_id, address_detail, trade_method, goods_state, "type", address_id2, address_detail2
+    </sql>
+
+    <select id="selectBriefByOrderNum" resultMap="GoodBriefResultMap">
+        select goods_id, name, price, user_id, user_nickname, credit_score, upload_time
+        from goods g left join users u on g.seller_id = u.user_id
+        where name like #{searchInfo} and upload_time &lt;= #{time}
+        <if test="type!=-1">and type = #{type}</if>
+        <if test="state!=-1">and goods_state = #{state}</if>
+        <choose>
+            <when test="orderNum==10">order by upload_time desc</when>
+            <when test="orderNum==11">order by upload_time asc</when>
+            <when test="orderNum==20">order by price desc</when>
+            <when test="orderNum==21">order by price asc</when>
+            <when test="orderNum==30">order by credit_score desc</when>
+            <when test="orderNum==31">order by credit_score asc</when>
+        </choose>
+    </select>
+
+    <select id="selectByExample" parameterType="com.example.SustechStore.pojo.GoodsExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from "goods"
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+        <if test="limit != null">
+            <if test="offset != null">
+                limit ${offset}, ${limit}
+            </if>
+            <if test="offset == null">
+                limit ${limit}
+            </if>
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from "goods"
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from "goods"
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.example.SustechStore.pojo.GoodsExample">
+        delete from "goods"
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.example.SustechStore.pojo.Goods">
+        insert into "goods" (goods_id, seller_id, "name",
+                             price, upload_time, description,
+                             classification_id, address_id, address_detail,
+                             trade_method, goods_state, "type",
+                             address_id2, address_detail2)
+        values (#{goodsId,jdbcType=INTEGER}, #{sellerId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+                #{price,jdbcType=DOUBLE}, #{uploadTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR},
+                #{classificationId,jdbcType=INTEGER}, #{addressId,jdbcType=INTEGER}, #{addressDetail,jdbcType=VARCHAR},
+                #{tradeMethod,jdbcType=VARCHAR}, #{goodsState,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
+                #{addressId2,jdbcType=INTEGER}, #{addressDetail2,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.example.SustechStore.pojo.Goods" keyProperty="goodsId">
+        insert into "goods"
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null">
+                goods_id,
+            </if>
+            <if test="sellerId != null">
+                seller_id,
+            </if>
+            <if test="name != null">
+                "name",
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="uploadTime != null">
+                upload_time,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="classificationId != null">
+                classification_id,
+            </if>
+            <if test="addressId != null">
+                address_id,
+            </if>
+            <if test="addressDetail != null">
+                address_detail,
+            </if>
+            <if test="tradeMethod != null">
+                trade_method,
+            </if>
+            <if test="goodsState != null">
+                goods_state,
+            </if>
+            <if test="type != null">
+                "type",
+            </if>
+            <if test="addressId2 != null">
+                address_id2,
+            </if>
+            <if test="addressDetail2 != null">
+                address_detail2,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=INTEGER},
+            </if>
+            <if test="sellerId != null">
+                #{sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="uploadTime != null">
+                #{uploadTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="classificationId != null">
+                #{classificationId,jdbcType=INTEGER},
+            </if>
+            <if test="addressId != null">
+                #{addressId,jdbcType=INTEGER},
+            </if>
+            <if test="addressDetail != null">
+                #{addressDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeMethod != null">
+                #{tradeMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsState != null">
+                #{goodsState,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="addressId2 != null">
+                #{addressId2,jdbcType=INTEGER},
+            </if>
+            <if test="addressDetail2 != null">
+                #{addressDetail2,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.example.SustechStore.pojo.GoodsExample" resultType="java.lang.Long">
+        select count(*) from "goods"
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update "goods"
+        <set>
+            <if test="record.goodsId != null">
+                goods_id = #{record.goodsId,jdbcType=INTEGER},
+            </if>
+            <if test="record.sellerId != null">
+                seller_id = #{record.sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="record.name != null">
+                "name" = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.price != null">
+                price = #{record.price,jdbcType=DOUBLE},
+            </if>
+            <if test="record.uploadTime != null">
+                upload_time = #{record.uploadTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.description != null">
+                description = #{record.description,jdbcType=VARCHAR},
+            </if>
+            <if test="record.classificationId != null">
+                classification_id = #{record.classificationId,jdbcType=INTEGER},
+            </if>
+            <if test="record.addressId != null">
+                address_id = #{record.addressId,jdbcType=INTEGER},
+            </if>
+            <if test="record.addressDetail != null">
+                address_detail = #{record.addressDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="record.tradeMethod != null">
+                trade_method = #{record.tradeMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="record.goodsState != null">
+                goods_state = #{record.goodsState,jdbcType=INTEGER},
+            </if>
+            <if test="record.type != null">
+                "type" = #{record.type,jdbcType=INTEGER},
+            </if>
+            <if test="record.addressId2 != null">
+                address_id2 = #{record.addressId2,jdbcType=INTEGER},
+            </if>
+            <if test="record.addressDetail2 != null">
+                address_detail2 = #{record.addressDetail2,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update "goods"
+        set goods_id = #{record.goodsId,jdbcType=INTEGER},
+        seller_id = #{record.sellerId,jdbcType=INTEGER},
+        "name" = #{record.name,jdbcType=VARCHAR},
+        price = #{record.price,jdbcType=DOUBLE},
+        upload_time = #{record.uploadTime,jdbcType=TIMESTAMP},
+        description = #{record.description,jdbcType=VARCHAR},
+        classification_id = #{record.classificationId,jdbcType=INTEGER},
+        address_id = #{record.addressId,jdbcType=INTEGER},
+        address_detail = #{record.addressDetail,jdbcType=VARCHAR},
+        trade_method = #{record.tradeMethod,jdbcType=VARCHAR},
+        goods_state = #{record.goodsState,jdbcType=INTEGER},
+        "type" = #{record.type,jdbcType=INTEGER},
+        address_id2 = #{record.addressId2,jdbcType=INTEGER},
+        address_detail2 = #{record.addressDetail2,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.SustechStore.pojo.Goods">
+        update "goods"
+        <set>
+            <if test="sellerId != null">
+                seller_id = #{sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                "name" = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="uploadTime != null">
+                upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="classificationId != null">
+                classification_id = #{classificationId,jdbcType=INTEGER},
+            </if>
+            <if test="addressId != null">
+                address_id = #{addressId,jdbcType=INTEGER},
+            </if>
+            <if test="addressDetail != null">
+                address_detail = #{addressDetail,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeMethod != null">
+                trade_method = #{tradeMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsState != null">
+                goods_state = #{goodsState,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                "type" = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="addressId2 != null">
+                address_id2 = #{addressId2,jdbcType=INTEGER},
+            </if>
+            <if test="addressDetail2 != null">
+                address_detail2 = #{addressDetail2,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.SustechStore.pojo.Goods">
+        update "goods"
+        set seller_id         = #{sellerId,jdbcType=INTEGER},
+            "name"            = #{name,jdbcType=VARCHAR},
+            price             = #{price,jdbcType=DOUBLE},
+            upload_time       = #{uploadTime,jdbcType=TIMESTAMP},
+            description       = #{description,jdbcType=VARCHAR},
+            classification_id = #{classificationId,jdbcType=INTEGER},
+            address_id        = #{addressId,jdbcType=INTEGER},
+            address_detail    = #{addressDetail,jdbcType=VARCHAR},
+            trade_method      = #{tradeMethod,jdbcType=VARCHAR},
+            goods_state       = #{goodsState,jdbcType=INTEGER},
+            "type"            = #{type,jdbcType=INTEGER},
+            address_id2       = #{addressId2,jdbcType=INTEGER},
+            address_detail2   = #{addressDetail2,jdbcType=VARCHAR}
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </update>
+</mapper>

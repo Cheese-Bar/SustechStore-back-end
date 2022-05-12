@@ -1,0 +1,2711 @@
+
+h2. 资源 {anchor:paths}
+
+h3. AES加解密测试接口 {anchor:1c8e0186e5ca70c22d07c5183d72e971}
+AES Controller
+
+
+h4. encryptParamTest {anchor:encryptparamtestusingpost}
+{noformat}
+POST /encryptParamTest
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*s*\\ \\ _必填_||s||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/encryptParamTest
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. initen {anchor:initenusingget}
+{noformat}
+GET /generateJsonArrayTest
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/generateJsonArrayTest
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. getEncrypt {anchor:getencryptusingget}
+{noformat}
+GET /generateJsonObjTest
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/generateJsonObjTest
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. getParamHexDecryptTest {anchor:getparamhexdecrypttestusingget}
+{noformat}
+GET /getParamHexDecryptTest/{param}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*param*\\ \\ _必填_||param||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||string|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/getParamHexDecryptTest/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+"string"
+{code}
+
+
+h4. initen2 {anchor:initen2usingget}
+{noformat}
+GET /initen/{type}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*type*\\ \\ _必填_||type||integer (int32)|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/initen/0
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. nextPageEn {anchor:nextpageenusingget}
+{noformat}
+GET /nextPageEn/{time}/{pageNum}/{pageSize}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*time*\\ \\ _必填_||time||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/nextPageEn/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. testPost {anchor:testpostusingpost}
+{noformat}
+POST /postJsonArrayDecryptTest
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*s*\\ \\ _必填_||s||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||string|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/postJsonArrayDecryptTest
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+"string"
+{code}
+
+
+h4. testPost2 {anchor:testpost2usingpost}
+{noformat}
+POST /postJsonObjDecryptTest
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*s*\\ \\ _必填_||s||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||string|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/postJsonObjDecryptTest
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+"string"
+{code}
+
+
+h4. testPost3 {anchor:testpost3usingpost}
+{noformat}
+POST /postParamDecryptTest
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*s*\\ \\ _必填_||s||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||string|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/postParamDecryptTest
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+"string"
+{code}
+
+
+h3. Basic-error-controller {anchor:basic-error-controller_resource}
+Basic Error Controller
+
+
+h4. errorHtml {anchor:errorhtmlusingpost}
+{noformat}
+POST /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusingget}
+{noformat}
+GET /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusingput}
+{noformat}
+PUT /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusingdelete}
+{noformat}
+DELETE /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*204*||No Content||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusingpatch}
+{noformat}
+PATCH /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*204*||No Content||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusinghead}
+{noformat}
+HEAD /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*204*||No Content||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h4. errorHtml {anchor:errorhtmlusingoptions}
+{noformat}
+OPTIONS /error
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ModelAndView|#modelandview]|
+|*204*||No Content||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}text/html{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/error
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "empty" : true,
+  "model" : "object",
+  "modelMap" : {
+    "string" : "object"
+  },
+  "reference" : true,
+  "status" : "string",
+  "view" : {
+    "contentType" : "string"
+  },
+  "viewName" : "string"
+}
+{code}
+
+
+h3. Release-controller {anchor:release-controller_resource}
+Release Controller
+
+
+h4. findMyRelease2 {anchor:findmyrelease2usingget}
+{noformat}
+GET /myRelease/{id}/{pageNum}/{pageSize}/{timestamp}/{type}/{orderNum}/{goodState}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||goodState||string|
+|*Path*|*id*\\ \\ _必填_||id||string|
+|*Path*|*orderNum*\\ \\ _必填_||orderNum||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*timestamp*\\ \\ _必填_||timestamp||string|
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/myRelease/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. Upload-controller {anchor:upload-controller_resource}
+Upload Controller
+
+
+h4. delImg {anchor:delimgusingdelete}
+{noformat}
+DELETE /delImg
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Query*|*imgPath*\\ \\ _必填_||imgPath||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[Result|#result]|
+|*204*||No Content||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/delImg
+{code}
+
+
+h6. 请求 query
+{code:language=json}
+{
+  "imgPath" : "string"
+}
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "login" : true,
+  "message" : "string",
+  "success" : true
+}
+{code}
+
+
+h4. uploadImg {anchor:uploadimgusingpost}
+{noformat}
+POST /uploadImg
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*FormData*|*file*\\ \\ _必填_||file||file|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[Result|#result]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}multipart/form-data{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/uploadImg
+{code}
+
+
+h6. 请求 formData
+{code:language=json}
+"file"
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "login" : true,
+  "message" : "string",
+  "success" : true
+}
+{code}
+
+
+h3. 分类界面接口 {anchor:6420a6c8879972ba168742d058f53f6b}
+Cat Controller
+
+
+h4. 商品简略信息显示 {anchor:findcatpagedetail2usingget}
+{noformat}
+GET /category/buy/{cat_id}/{pageNum}/{pageSize}/{type}/{time}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*cat_id*\\ \\ _必填_||分类编号||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*time*\\ \\ _必填_||time||string|
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/category/buy/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 分类界面初始化 {anchor:initusingget}
+{noformat}
+GET /init/{type}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/init/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 商品详情接口 {anchor:7e090d97c5e13fd9e713968ff00e2ab0}
+Good Controller
+
+
+h4. 为当前用户获得该商品的详细信息 {anchor:getgooddetail2usingget}
+{noformat}
+GET /good_detail/{user_id}/{good_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*good_id*\\ \\ _必填_||good_id||string|
+|*Path*|*user_id*\\ \\ _必填_||user_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/good_detail/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 我的界面数据调用接口 {anchor:499301caf144a28c7e3c3cb77939732e}
+Collect Controller
+
+
+h4. 下架商品 {anchor:deletegoodusingget}
+{noformat}
+GET /Collect/deleteGood/{userId}/{goodId}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodId*\\ \\ _必填_||goodId||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/deleteGood/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 获取用户喜欢的商品列表,并根据所选参数排序 {anchor:getfavoriteusingget}
+{noformat}
+GET /Collect/favorite/{userId}/{time}/{pageNum}/{pageSize}/{orderNum}/{goodState}/{type}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||商品状态码： -1不适用该属性筛选/1在售商品/2已完成交易的商品/3主动下架的商品||string|
+|*Path*|*orderNum*\\ \\ _必填_||排序方法码：10时间降序/11时间升序/20价格降序/21价格升序||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*time*\\ \\ _必填_||时间戳||string|
+|*Path*|*type*\\ \\ _必填_||商品类别： -1不使用该属性筛选/1货架商品/2求购商品||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/favorite/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 获取用户浏览足迹的商品列表,并根据所选参数排序 {anchor:getfootprintusingget}
+{noformat}
+GET /Collect/footPrint/{userId}/{time}/{pageNum}/{pageSize}/{orderNum}/{goodState}/{type}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||商品状态码： -1不适用该属性筛选/1在售商品/2已完成交易的商品/3主动下架的商品||string|
+|*Path*|*orderNum*\\ \\ _必填_||排序方法码：10时间降序/11时间升序/20价格降序/21价格升序||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*time*\\ \\ _必填_||时间戳||string|
+|*Path*|*type*\\ \\ _必填_||商品类别： -1不使用该属性筛选/1货架商品/2求购商品||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/footPrint/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 界面初始化 {anchor:initstaticusingget}
+{noformat}
+GET /Collect/init/{userId}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*userId*\\ \\ _必填_||用户的userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/init/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 重新发布商品 {anchor:resubmitgoodusingget}
+{noformat}
+GET /Collect/resubmitGood/{userId}/{goodId}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodId*\\ \\ _必填_||goodId||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/resubmitGood/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 更新当前用户-商品的喜欢状态 {anchor:updatefavoriteusingget}
+{noformat}
+GET /Collect/updateFavorite/{userId}/{goodId}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodId*\\ \\ _必填_||goodId||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Collect/updateFavorite/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 接收发布表单 {anchor:4ac92e9e5d2a8c738fe4755ca99b411e}
+Receive Controller
+
+
+h4. 发布商品 {anchor:addgooddetailusingpost}
+{noformat}
+POST /receive/add-goods-detail
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*stringJson*\\ \\ _必填_||stringJson||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/receive/add-goods-detail
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 获取所有地址 {anchor:getaddressesusingget}
+{noformat}
+GET /receive/getAddresses
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/receive/getAddresses
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 获取所有地址 {anchor:getlabelsusingget}
+{noformat}
+GET /receive/getLabels
+{noformat}
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/receive/getLabels
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 搜索接口 {anchor:d2a0eaa95166c60ed624d089a612a438}
+Search Controller
+
+
+h4. 简单模糊搜索 {anchor:fuzzysearchusingget}
+{noformat}
+GET /Search/fuzzy/{time}/{string}/{pageNum}/{pageSize}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*string*\\ \\ _必填_||string||string|
+|*Path*|*time*\\ \\ _必填_||time||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Search/fuzzy/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 带有筛选与排序的模糊搜索 {anchor:fuzzysearchplusorderusingget}
+{noformat}
+GET /Search/fuzzyPlus/{time}/{string}/{pageNum}/{pageSize}/{orderNum}/{goodState}/{type}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||goodState||string|
+|*Path*|*orderNum*\\ \\ _必填_||orderNum||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*string*\\ \\ _必填_||string||string|
+|*Path*|*time*\\ \\ _必填_||time||string|
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/Search/fuzzyPlus/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 用户信息修改接口 {anchor:5c17ea1ed26bc14c5ffda29f58c7e71a}
+Settings Controller
+
+
+h4. modifyImg {anchor:modifyimgusingget}
+{noformat}
+GET /settings/modify_image/{image_url}/{user_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*image_url*\\ \\ _必填_||image_url||string|
+|*Path*|*user_id*\\ \\ _必填_||user_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/settings/modify_image/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. modifyNickname {anchor:modifynicknameusingget}
+{noformat}
+GET /settings/modify_nickname/{nickname}/{user_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*nickname*\\ \\ _必填_||nickname||string|
+|*Path*|*user_id*\\ \\ _必填_||user_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/settings/modify_nickname/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. topUp {anchor:topupusingget}
+{noformat}
+GET /settings/topUp/{user_id}/{money}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*money*\\ \\ _必填_||money||string|
+|*Path*|*user_id*\\ \\ _必填_||user_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/settings/topUp/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 用户信息接口 {anchor:6b4083c1d179d4c2928abe628ab60489}
+Login Controller
+
+
+h4. 登录初始化 {anchor:selectrealnamebywxusingget}
+{noformat}
+GET /login/init/{wx_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*wx_id*\\ \\ _必填_||wx_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/init/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. initInfo {anchor:initinfousingget}
+{noformat}
+GET /login/init_info/{s_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/init_info/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. login1 {anchor:login1usingget}
+{noformat}
+GET /login/login1/{s_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/login1/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. login2 {anchor:login2usingget}
+{noformat}
+GET /login/login2/{s_id}/{code}/{wx_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*code*\\ \\ _必填_||code||string|
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+|*Path*|*wx_id*\\ \\ _必填_||wx_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/login2/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. login2Test {anchor:login2testusingpost}
+{noformat}
+POST /login/login2Test
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*stringJson*\\ \\ _必填_||stringJson||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/login2Test
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. logOut {anchor:logoutusingget}
+{noformat}
+GET /login/logout/{s_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/logout/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. register1 {anchor:register1usingget}
+{noformat}
+GET /login/register1/{s_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/register1/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. register2 {anchor:register2usingget}
+{noformat}
+GET /login/register2/{s_id}/{code}/{nickname}/{wx_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*code*\\ \\ _必填_||code||string|
+|*Path*|*nickname*\\ \\ _必填_||nickname||string|
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+|*Path*|*wx_id*\\ \\ _必填_||wx_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/register2/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. register2Test {anchor:register2testusingpost}
+{noformat}
+POST /login/register2Test
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Body*|*stringJson*\\ \\ _必填_||stringJson||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*201*||Created||无内容|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/login/register2Test
+{code}
+
+
+h6. 请求 body
+{code:language=json}
+{ }
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. quit {anchor:quitusingget}
+{noformat}
+GET /quit/{wx_id}/{s_id}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*s_id*\\ \\ _必填_||s_id||string|
+|*Path*|*wx_id*\\ \\ _必填_||wx_id||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/quit/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 订单接口 {anchor:33be1f1e9f5622971ec234e687e3229a}
+Order Controller
+
+
+h4. 购买商品 {anchor:buygoodusingget}
+{noformat}
+GET /order/buyGood/{userId}/{goodId}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodId*\\ \\ _必填_||goodId||string|
+|*Path*|*userId*\\ \\ _必填_||userId||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/order/buyGood/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 我买入的 {anchor:selectbybuyerid2usingget}
+{noformat}
+GET /order/byBuyer/{id}/{pageNum}/{pageSize}/{timestamp}/{type}/{orderNum}/{goodState}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||goodState||string|
+|*Path*|*id*\\ \\ _必填_||id||string|
+|*Path*|*orderNum*\\ \\ _必填_||orderNum||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*timestamp*\\ \\ _必填_||timestamp||string|
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/order/byBuyer/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h4. 我卖出的 {anchor:selectbysellerid2usingget}
+{noformat}
+GET /order/bySeller/{id}/{pageNum}/{pageSize}/{timestamp}/{type}/{orderNum}/{goodState}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*goodState*\\ \\ _必填_||goodState||string|
+|*Path*|*id*\\ \\ _必填_||id||string|
+|*Path*|*orderNum*\\ \\ _必填_||orderNum||string|
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*timestamp*\\ \\ _必填_||timestamp||string|
+|*Path*|*type*\\ \\ _必填_||type||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/order/bySeller/string/string/string/string/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+h3. 首页接口 {anchor:25464286358e1229829b3d44bd7065a7}
+Toppage Controller
+
+
+h4. nextPage {anchor:nextpageusingget}
+{noformat}
+GET /toppage/nextPage/{time}/{pageNum}/{pageSize}
+{noformat}
+
+
+h5. 参数
+
+||类型||名称||说明||类型||
+|*Path*|*pageNum*\\ \\ _必填_||pageNum||string|
+|*Path*|*pageSize*\\ \\ _必填_||pageSize||string|
+|*Path*|*time*\\ \\ _必填_||time||string|
+
+
+h5. 响应
+
+||HTTP代码||说明||类型||
+|*200*||OK||[ResponseBean«object»|#a5c50b7e092e566f888529d938b13d82]|
+|*401*||Unauthorized||无内容|
+|*403*||Forbidden||无内容|
+|*404*||Not Found||无内容|
+
+
+h5. 消耗
+
+* {noformat}application/json{noformat}
+
+
+h5. 生成
+
+* {noformat}*/*{noformat}
+
+
+h5. HTTP请求示例
+
+h6. 请求 path
+{code}
+/toppage/nextPage/string/string/string
+{code}
+
+
+h5. HTTP响应示例
+
+h6. 响应 200
+{code:language=json}
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+{code}
+
+
+

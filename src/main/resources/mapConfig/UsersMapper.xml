@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.SustechStore.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.example.SustechStore.pojo.Users">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
+    <result column="is_cas" jdbcType="BIT" property="isCas" />
+    <result column="user_realname" jdbcType="VARCHAR" property="userRealname" />
+    <result column="credit_score" jdbcType="INTEGER" property="creditScore" />
+    <result column="balance" jdbcType="DOUBLE" property="balance" />
+    <result column="head_image" jdbcType="VARCHAR" property="headImage" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, user_nickname, is_cas, user_realname, credit_score, balance, head_image
+  </sql>
+  <select id="selectByExample" parameterType="com.example.SustechStore.pojo.UsersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from "users"
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from "users"
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from "users"
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.SustechStore.pojo.UsersExample">
+    delete from "users"
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.SustechStore.pojo.Users">
+    insert into "users" (user_id, user_nickname, is_cas, 
+      user_realname, credit_score, balance, 
+      head_image)
+    values (#{userId,jdbcType=INTEGER}, #{userNickname,jdbcType=VARCHAR}, #{isCas,jdbcType=BIT}, 
+      #{userRealname,jdbcType=VARCHAR}, #{creditScore,jdbcType=INTEGER}, #{balance,jdbcType=DOUBLE}, 
+      #{headImage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.SustechStore.pojo.Users" keyProperty="userId">
+    insert into "users"
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userNickname != null">
+        user_nickname,
+      </if>
+      <if test="isCas != null">
+        is_cas,
+      </if>
+      <if test="userRealname != null">
+        user_realname,
+      </if>
+      <if test="creditScore != null">
+        credit_score,
+      </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="headImage != null">
+        head_image,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userNickname != null">
+        #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="isCas != null">
+        #{isCas,jdbcType=BIT},
+      </if>
+      <if test="userRealname != null">
+        #{userRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="creditScore != null">
+        #{creditScore,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="headImage != null">
+        #{headImage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.SustechStore.pojo.UsersExample" resultType="java.lang.Long">
+    select count(*) from "users"
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update "users"
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userNickname != null">
+        user_nickname = #{record.userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isCas != null">
+        is_cas = #{record.isCas,jdbcType=BIT},
+      </if>
+      <if test="record.userRealname != null">
+        user_realname = #{record.userRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creditScore != null">
+        credit_score = #{record.creditScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DOUBLE},
+      </if>
+      <if test="record.headImage != null">
+        head_image = #{record.headImage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update "users"
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      user_nickname = #{record.userNickname,jdbcType=VARCHAR},
+      is_cas = #{record.isCas,jdbcType=BIT},
+      user_realname = #{record.userRealname,jdbcType=VARCHAR},
+      credit_score = #{record.creditScore,jdbcType=INTEGER},
+      balance = #{record.balance,jdbcType=DOUBLE},
+      head_image = #{record.headImage,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.SustechStore.pojo.Users">
+    update "users"
+    <set>
+      <if test="userNickname != null">
+        user_nickname = #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="isCas != null">
+        is_cas = #{isCas,jdbcType=BIT},
+      </if>
+      <if test="userRealname != null">
+        user_realname = #{userRealname,jdbcType=VARCHAR},
+      </if>
+      <if test="creditScore != null">
+        credit_score = #{creditScore,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="headImage != null">
+        head_image = #{headImage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.SustechStore.pojo.Users">
+    update "users"
+    set user_nickname = #{userNickname,jdbcType=VARCHAR},
+      is_cas = #{isCas,jdbcType=BIT},
+      user_realname = #{userRealname,jdbcType=VARCHAR},
+      credit_score = #{creditScore,jdbcType=INTEGER},
+      balance = #{balance,jdbcType=DOUBLE},
+      head_image = #{headImage,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

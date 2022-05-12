@@ -1,0 +1,27 @@
+server:
+  port: 8080
+name: SustechStore
+
+mybatis:
+  config-location: mybatis/mybatis-config.xml
+  mapper-locations: mapConfig/**.xml
+  type-aliases-package: mapConfig
+
+spring:
+  #  profiles:
+  #  active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://121.37.242.140:5432/sustech_store
+    username: postgres
+    password: postgres312
+  jpa:
+    hibernate:
+      #dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+aes.key: 9f5d54580044d478
+
